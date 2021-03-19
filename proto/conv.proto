@@ -1,0 +1,13 @@
+syntax = "proto3";
+import "conv_id.proto";
+import "attr.proto";
+
+
+message Conv {
+    ConvId convId = 1;
+    int64 conv_time = 2;
+    float conv_value = 3;
+    repeated int64 conv_item_id = 4;
+
+    repeated Attr attr = 101;
+}

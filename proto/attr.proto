@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message Attr {
+    string attr_key = 1;
+    string attr_value = 2;
+}

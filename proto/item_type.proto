@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+enum ItemType {
+    Unknown = 0;
+    Article = 1;
+    Post = 2;
+    QuoraQuestion = 3;
+    QuoraAnswer = 4;
+    Gallery = 5;
+    NovelBook = 6;
+    NovelChapter = 7;
+    BilibiliVideo = 8;
+    DouyinVideo = 9;
+    Movie = 10;
+    SeriesAlbum = 11;
+    SeriesEpisode = 12;
+    VarietyAlbum = 13;
+    VarietyEpisode = 14;
+    Category = 15; // 分类
+    Sug = 16; // 搜索词
+    QualityComment = 17; // 优质评论
+    Author = 18; // 用户推荐
+    VideoColumn = 19; // 视频专辑
+    Game = 22; // 可以玩的游戏
+    Program = 21;
+    // 一般不可推荐
+    Comment = 101;
+    Clue = 102;
+    Commodity = 103;
+}
