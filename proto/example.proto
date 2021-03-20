@@ -1,0 +1,79 @@
+syntax = "proto3";
+
+import "item_type.proto";
+import "conv_id.proto";
+import "attr.proto";
+import "user_meta.proto";
+
+message Conv {
+    ConvId convId = 1;
+    int64 conv_time = 2;
+    float conv_value = 3;
+    repeated int64 conv_item_id = 4;
+
+    repeated Attr attr = 101;
+}
+
+message LinkItem {
+    ItemType link_item_type = 1;
+    int64 link_position = 2;
+    int64 link_item_id = 3;
+    string link_text = 4;
+    Attr attr = 101;
+}
+
+message ParentItem {
+    ItemType parent_item_type = 1;
+    int64 parent_item_id = 2;
+    Attr attr = 101;
+}
+
+message ChildrenItem {
+    ItemType children_item_type = 1;
+    repeated int64 children_item_id = 2;
+    int32 k = 3;
+    Attr attr = 101;
+}
+
+message Meta {
+    // 1-50 for recommend or say <user, item> pair
+    int64 user_id = 1;
+    int64 item_id = 2;
+    int64 channel_id = 3;
+    string request_id = 4;
+    int64 request_time = 5;
+    int64 click_time = 6;
+    int64 ctr_generate_time = 7;
+    string ab_version = 8;
+    repeated Conv conv = 9;
+
+    // 51-100 for user
+    int64 register_time = 51;
+    
+    // 101-200 for item
+    int32 item_type = 101;
+    int64 author_user_id = 102;
+    repeated LinkItem link_item = 103;
+    repeated ParentItem parent_item = 104;
+    repeated ChildrenItem children_item = 105;
+
+    repeated Attr attr = 501;
+
+}
+
+message Embedding {
+    int64 embedding_feature_id = 1;
+    repeated float embedding_value = 2;
+
+    repeated Attr attr = 101;
+}
+
+
+message Example {
+    Meta meta = 1;
+    repeated float label = 2;
+    repeated int64 feature_id = 3;
+    repeated Embedding embedding = 4;
+
+    repeated Attr attr = 101;
+}

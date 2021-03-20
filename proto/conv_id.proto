@@ -1,6 +1,6 @@
 syntax = "proto3";
 
 enum ConvId {
-    Unknown = 0;
+    UnknownConvId = 0;
     
 }

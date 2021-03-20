@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+enum UserGender {
+    UnknownGender = 0;
+    Male = 1;
+    Female = 2;
+}
+
+enum UserAge {
+    UnknownAge = 0;
+    LE20 = 1;
+    G20LE25 = 2;
+    G25LE30 = 3;
+    G30LE35 = 4;
+}
